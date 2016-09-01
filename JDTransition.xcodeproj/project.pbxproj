@@ -8,12 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		130A3FED1D789A0F004E9583 /* JDTransition.h in Headers */ = {isa = PBXBuildFile; fileRef = 130A3FEC1D789A0F004E9583 /* JDTransition.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		130A3FFA1D789AB1004E9583 /* JDSegueSlideFromX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130A3FF41D789AB1004E9583 /* JDSegueSlideFromX.swift */; };
+		130A3FFB1D789AB1004E9583 /* JDSegueScaleOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130A3FF51D789AB1004E9583 /* JDSegueScaleOut.swift */; };
+		130A3FFC1D789AB1004E9583 /* JDSegueScaleIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130A3FF61D789AB1004E9583 /* JDSegueScaleIn.swift */; };
+		130A3FFD1D789AB1004E9583 /* JDSegueOriginable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130A3FF71D789AB1004E9583 /* JDSegueOriginable.swift */; };
+		130A3FFE1D789AB1004E9583 /* JDSegueDelayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130A3FF81D789AB1004E9583 /* JDSegueDelayable.swift */; };
+		130A3FFF1D789AB1004E9583 /* JDSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130A3FF91D789AB1004E9583 /* JDSegue.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		130A3FE91D789A0F004E9583 /* JDTransition.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JDTransition.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		130A3FEC1D789A0F004E9583 /* JDTransition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JDTransition.h; sourceTree = "<group>"; };
 		130A3FEE1D789A0F004E9583 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		130A3FF41D789AB1004E9583 /* JDSegueSlideFromX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDSegueSlideFromX.swift; sourceTree = "<group>"; };
+		130A3FF51D789AB1004E9583 /* JDSegueScaleOut.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDSegueScaleOut.swift; sourceTree = "<group>"; };
+		130A3FF61D789AB1004E9583 /* JDSegueScaleIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDSegueScaleIn.swift; sourceTree = "<group>"; };
+		130A3FF71D789AB1004E9583 /* JDSegueOriginable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDSegueOriginable.swift; sourceTree = "<group>"; };
+		130A3FF81D789AB1004E9583 /* JDSegueDelayable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDSegueDelayable.swift; sourceTree = "<group>"; };
+		130A3FF91D789AB1004E9583 /* JDSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDSegue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,10 +58,32 @@
 		130A3FEB1D789A0F004E9583 /* JDTransition */ = {
 			isa = PBXGroup;
 			children = (
+				130A40021D789AC6004E9583 /* Protocols */,
+				130A40011D789ABE004E9583 /* Segues */,
 				130A3FEC1D789A0F004E9583 /* JDTransition.h */,
 				130A3FEE1D789A0F004E9583 /* Info.plist */,
 			);
 			path = JDTransition;
+			sourceTree = "<group>";
+		};
+		130A40011D789ABE004E9583 /* Segues */ = {
+			isa = PBXGroup;
+			children = (
+				130A3FF41D789AB1004E9583 /* JDSegueSlideFromX.swift */,
+				130A3FF51D789AB1004E9583 /* JDSegueScaleOut.swift */,
+				130A3FF61D789AB1004E9583 /* JDSegueScaleIn.swift */,
+			);
+			name = Segues;
+			sourceTree = "<group>";
+		};
+		130A40021D789AC6004E9583 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				130A3FF71D789AB1004E9583 /* JDSegueOriginable.swift */,
+				130A3FF81D789AB1004E9583 /* JDSegueDelayable.swift */,
+				130A3FF91D789AB1004E9583 /* JDSegue.swift */,
+			);
+			name = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -130,6 +164,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				130A3FFE1D789AB1004E9583 /* JDSegueDelayable.swift in Sources */,
+				130A3FFF1D789AB1004E9583 /* JDSegue.swift in Sources */,
+				130A3FFA1D789AB1004E9583 /* JDSegueSlideFromX.swift in Sources */,
+				130A3FFD1D789AB1004E9583 /* JDSegueOriginable.swift in Sources */,
+				130A3FFB1D789AB1004E9583 /* JDSegueScaleOut.swift in Sources */,
+				130A3FFC1D789AB1004E9583 /* JDSegueScaleIn.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,6 +270,7 @@
 		130A3FF21D789A0F004E9583 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -240,12 +281,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = de.jandamm.JDTransition;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		130A3FF31D789A0F004E9583 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -278,6 +321,7 @@
 				130A3FF31D789A0F004E9583 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
