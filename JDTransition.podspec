@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "JDTransition"
-  s.version      = "0.1.1"
+  s.version      = "0.2"
   s.summary      = "Transitions to reuse."
   s.homepage     = "http://jandamm.de"
   s.license      = { :type => "MIT", :file => "LICENSE" }

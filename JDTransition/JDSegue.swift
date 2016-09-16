@@ -18,16 +18,16 @@ public protocol JDSegue {
     
     /// Time the transition animation takes
     /// - parameter Default: x seconds
-    var transitionTime: NSTimeInterval { get set }
+    var transitionTime: TimeInterval { get set }
 }
 
 extension JDSegue where Self: UIStoryboardSegue {
     
     func setupScreens() {
-        destinationViewController.view.frame = sourceViewController.view.frame
+        destination.view.frame = source.view.frame
     }
     
-    func finishSegue(completion: (() -> Void)?) {
-        sourceViewController.presentViewController(destinationViewController, animated: false, completion: completion)
+    func finishSegue(_ completion: (() -> Void)?) {
+        source.present(destination, animated: false, completion: completion)
     }
 }

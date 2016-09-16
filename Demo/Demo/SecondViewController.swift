@@ -18,7 +18,7 @@ class SecondViewController: UIViewController {
         super.init(coder: aDecoder)
     }
 
-    @IBAction func dismiss(sender: UIButton) {
-        dismissViewControllerAnimated(false, completion: nil)
+    @IBAction func dismiss(_ sender: UIButton) {
+        self.dismiss(animated: false, completion: nil)
     }
 }

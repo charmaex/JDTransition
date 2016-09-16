@@ -13,17 +13,17 @@ import Foundation
 public protocol JDSegueDelayable: JDSegue {
     /// Time the transition animation is delayed after calling
     /// - parameter Default: 0 seconds
-    var transitionDelay: NSTimeInterval { get set }
+    var transitionDelay: TimeInterval { get set }
 }
 
 
 public extension JDSegueDelayable {
     
-    public func delay(delayedCode: () -> ()) {
+    public func delay(_ delayedCode: @escaping () -> ()) {
         
-        let delayTime: dispatch_time_t = dispatch_time(DISPATCH_TIME_NOW, Int64(transitionDelay * Double(NSEC_PER_SEC)))
+        let delayTime: DispatchTime = DispatchTime.now() + Double(Int64(transitionDelay * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
         
-        dispatch_after(delayTime, dispatch_get_main_queue(), {
+        DispatchQueue.main.asyncAfter(deadline: delayTime, execute: {
             delayedCode()
         })
     }

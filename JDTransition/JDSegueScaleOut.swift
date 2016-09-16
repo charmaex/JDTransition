@@ -10,46 +10,46 @@ import UIKit
 
 /// Segue where the current screen scales out to a point or the center of the screen.
 @objc
-public class JDSegueScaleOut: UIStoryboardSegue, JDSegueDelayable, JDSegueOriginable {
+open class JDSegueScaleOut: UIStoryboardSegue, JDSegueDelayable, JDSegueOriginable {
     
     /// Defines at which point the animation should start
     /// - parameter Default: center of the screen
-    public var animationOrigin: CGPoint?
+    open var animationOrigin: CGPoint?
     
     /// Time the transition animation takes
     /// - parameter Default: 0.5 seconds
-    public var transitionTime: NSTimeInterval = 0.5
+    open var transitionTime: TimeInterval = 0.5
     
     /// Time the transition animation is delayed after calling
     /// - parameter Default: 0 seconds
-    public var transitionDelay: NSTimeInterval = 0
+    open var transitionDelay: TimeInterval = 0
     
     /// Animation Curve
     /// - parameter Default: CurveLinear
-    public var animationOption: UIViewAnimationOptions = .CurveLinear
+    open var animationOption: UIViewAnimationOptions = .curveLinear
     
     
-    public override func perform() {
-        let sourceVC = sourceViewController
-        let destinationVC = destinationViewController
+    open override func perform() {
+        let sourceVC = source
+        let destinationVC = destination
         
         setupScreens()
         
         delay() {
             sourceVC.view.window!.insertSubview(destinationVC.view, belowSubview: sourceVC.view)
         
-            UIView.animateWithDuration(self.transitionTime, delay: 0, options: self.animationOption, animations: {
+            UIView.animate(withDuration: self.transitionTime, delay: 0, options: self.animationOption, animations: {
                 
                 if let center = self.animationOrigin {
                     sourceVC.view.center = center
                 }
                 
-                sourceVC.view.transform = CGAffineTransformMakeScale(0.05, 0.05)
+                sourceVC.view.transform = CGAffineTransform(scaleX: 0.05, y: 0.05)
                 
             }) { finished in
                 
                 self.finishSegue() {
-                    sourceVC.view.transform = CGAffineTransformMakeScale(1, 1)
+                    sourceVC.view.transform = CGAffineTransform(scaleX: 1, y: 1)
                 }
             }
         }
