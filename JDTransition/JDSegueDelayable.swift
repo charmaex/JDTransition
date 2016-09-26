@@ -21,11 +21,9 @@ public extension JDSegueDelayable {
     
     public func delay(_ delayedCode: @escaping () -> ()) {
         
-        let delayTime: DispatchTime = DispatchTime.now() + Double(Int64(transitionDelay * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
-        
-        DispatchQueue.main.asyncAfter(deadline: delayTime, execute: {
+        DispatchQueue.main.asyncAfter(deadline: .now() + transitionDelay) {
             delayedCode()
-        })
+        }
     }
     
 }

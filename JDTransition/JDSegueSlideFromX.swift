@@ -11,7 +11,7 @@ import UIKit
 /// Segue where the next screen slides in from left.
 @objc
 open class JDSegueSlideFromLeft: JDSegueSlideFromRight {
-    override var direction: JDSegueSlideFromRight.Direction {
+    override var direction: JDAnimationSlideFrom.Direction {
         return .left
     }
 }
@@ -19,7 +19,7 @@ open class JDSegueSlideFromLeft: JDSegueSlideFromRight {
 /// Segue where the next screen slides in from top.
 @objc
 open class JDSegueSlideFromTop: JDSegueSlideFromRight {
-    override var direction: JDSegueSlideFromRight.Direction {
+    override var direction: JDAnimationSlideFrom.Direction {
         return .top
     }
 }
@@ -27,7 +27,7 @@ open class JDSegueSlideFromTop: JDSegueSlideFromRight {
 /// Segue where the next screen slides in from bottom.
 @objc
 open class JDSegueSlideFromBottom: JDSegueSlideFromRight {
-    override var direction: JDSegueSlideFromRight.Direction {
+    override var direction: JDAnimationSlideFrom.Direction {
         return .bottom
     }
 }
@@ -48,15 +48,8 @@ open class JDSegueSlideFromRight: UIStoryboardSegue, JDSegueDelayable {
     /// - parameter Default: CurveLinear
     open var animationOption: UIViewAnimationOptions = .curveLinear
     
-    var direction: Direction {
+    var direction: JDAnimationSlideFrom.Direction {
         return .right
-    }
-    
-    enum Direction {
-        case left
-        case right
-        case bottom
-        case top
     }
     
     open override func perform() {

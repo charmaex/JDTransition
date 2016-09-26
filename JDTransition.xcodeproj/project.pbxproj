@@ -14,6 +14,9 @@
 		130A3FFD1D789AB1004E9583 /* JDSegueOriginable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130A3FF71D789AB1004E9583 /* JDSegueOriginable.swift */; };
 		130A3FFE1D789AB1004E9583 /* JDSegueDelayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130A3FF81D789AB1004E9583 /* JDSegueDelayable.swift */; };
 		130A3FFF1D789AB1004E9583 /* JDSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130A3FF91D789AB1004E9583 /* JDSegue.swift */; };
+		13728E3E1D9956EC000A20B6 /* JDNavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13728E3D1D9956EC000A20B6 /* JDNavigationDelegate.swift */; };
+		13728E421D9958F1000A20B6 /* JDAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13728E411D9958F1000A20B6 /* JDAnimator.swift */; };
+		13728E441D995923000A20B6 /* JDSlideFromXAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13728E431D995923000A20B6 /* JDSlideFromXAnimation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		130A3FF71D789AB1004E9583 /* JDSegueOriginable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDSegueOriginable.swift; sourceTree = "<group>"; };
 		130A3FF81D789AB1004E9583 /* JDSegueDelayable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDSegueDelayable.swift; sourceTree = "<group>"; };
 		130A3FF91D789AB1004E9583 /* JDSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDSegue.swift; sourceTree = "<group>"; };
+		13728E3D1D9956EC000A20B6 /* JDNavigationDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDNavigationDelegate.swift; sourceTree = "<group>"; };
+		13728E411D9958F1000A20B6 /* JDAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDAnimator.swift; sourceTree = "<group>"; };
+		13728E431D995923000A20B6 /* JDSlideFromXAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDSlideFromXAnimation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +64,8 @@
 		130A3FEB1D789A0F004E9583 /* JDTransition */ = {
 			isa = PBXGroup;
 			children = (
-				130A40021D789AC6004E9583 /* Protocols */,
+				13728E3F1D9958BB000A20B6 /* Animations */,
+				13728E401D9958C7000A20B6 /* NavigationController */,
 				130A40011D789ABE004E9583 /* Segues */,
 				130A3FEC1D789A0F004E9583 /* JDTransition.h */,
 				130A3FEE1D789A0F004E9583 /* Info.plist */,
@@ -69,6 +76,7 @@
 		130A40011D789ABE004E9583 /* Segues */ = {
 			isa = PBXGroup;
 			children = (
+				130A40021D789AC6004E9583 /* Protocols */,
 				130A3FF41D789AB1004E9583 /* JDSegueSlideFromX.swift */,
 				130A3FF51D789AB1004E9583 /* JDSegueScaleOut.swift */,
 				130A3FF61D789AB1004E9583 /* JDSegueScaleIn.swift */,
@@ -84,6 +92,23 @@
 				130A3FF91D789AB1004E9583 /* JDSegue.swift */,
 			);
 			name = Protocols;
+			sourceTree = "<group>";
+		};
+		13728E3F1D9958BB000A20B6 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				13728E431D995923000A20B6 /* JDSlideFromXAnimation.swift */,
+			);
+			name = Animations;
+			sourceTree = "<group>";
+		};
+		13728E401D9958C7000A20B6 /* NavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				13728E3D1D9956EC000A20B6 /* JDNavigationDelegate.swift */,
+				13728E411D9958F1000A20B6 /* JDAnimator.swift */,
+			);
+			name = NavigationController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,7 +192,10 @@
 			files = (
 				130A3FFE1D789AB1004E9583 /* JDSegueDelayable.swift in Sources */,
 				130A3FFF1D789AB1004E9583 /* JDSegue.swift in Sources */,
+				13728E441D995923000A20B6 /* JDSlideFromXAnimation.swift in Sources */,
 				130A3FFA1D789AB1004E9583 /* JDSegueSlideFromX.swift in Sources */,
+				13728E3E1D9956EC000A20B6 /* JDNavigationDelegate.swift in Sources */,
+				13728E421D9958F1000A20B6 /* JDAnimator.swift in Sources */,
 				130A3FFD1D789AB1004E9583 /* JDSegueOriginable.swift in Sources */,
 				130A3FFB1D789AB1004E9583 /* JDSegueScaleOut.swift in Sources */,
 				130A3FFC1D789AB1004E9583 /* JDSegueScaleIn.swift in Sources */,
