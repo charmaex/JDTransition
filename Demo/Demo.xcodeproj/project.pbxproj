@@ -11,12 +11,14 @@
 		13706F811D741291000903D8 /* SecondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13706F7F1D741291000903D8 /* SecondViewController.xib */; };
 		13706F831D7413A4000903D8 /* AnotherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13706F821D7413A4000903D8 /* AnotherViewController.swift */; };
 		13706F851D74146A000903D8 /* Segues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13706F841D74146A000903D8 /* Segues.swift */; };
+		13728E471D996166000A20B6 /* FirstVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13728E461D996166000A20B6 /* FirstVC.swift */; };
 		13B447251D740CF6002CDAE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B447241D740CF6002CDAE1 /* AppDelegate.swift */; };
 		13B447271D740CF6002CDAE1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B447261D740CF6002CDAE1 /* ViewController.swift */; };
 		13B4472A1D740CF6002CDAE1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13B447281D740CF6002CDAE1 /* Main.storyboard */; };
 		13B4472C1D740CF6002CDAE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B4472B1D740CF6002CDAE1 /* Assets.xcassets */; };
 		13B4472F1D740CF6002CDAE1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13B4472D1D740CF6002CDAE1 /* LaunchScreen.storyboard */; };
 		13C0D5831D994A8D002F171D /* JDTransition.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13C0D5821D994A8D002F171D /* JDTransition.framework */; };
+		13D9A7651D99861700844A1A /* DemoDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D9A7641D99861700844A1A /* DemoDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -37,6 +39,7 @@
 		13706F7F1D741291000903D8 /* SecondViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SecondViewController.xib; sourceTree = "<group>"; };
 		13706F821D7413A4000903D8 /* AnotherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnotherViewController.swift; sourceTree = "<group>"; };
 		13706F841D74146A000903D8 /* Segues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Segues.swift; sourceTree = "<group>"; };
+		13728E461D996166000A20B6 /* FirstVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstVC.swift; sourceTree = "<group>"; };
 		13B447211D740CF6002CDAE1 /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B447241D740CF6002CDAE1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		13B447261D740CF6002CDAE1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -44,7 +47,8 @@
 		13B4472B1D740CF6002CDAE1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		13B4472E1D740CF6002CDAE1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		13B447301D740CF6002CDAE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		13C0D5821D994A8D002F171D /* JDTransition.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JDTransition.framework; path = "../../../../Library/Developer/Xcode/DerivedData/JDTransition-fgrxfpcqwyzytfgrszghsmmgfndd/Build/Products/Debug-iphonesimulator/JDTransition.framework"; sourceTree = "<group>"; };
+		13C0D5821D994A8D002F171D /* JDTransition.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JDTransition.framework; path = "../Debug-iphonesimulator/JDTransition.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		13D9A7641D99861700844A1A /* DemoDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +63,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		13728E451D996136000A20B6 /* Segue */ = {
+			isa = PBXGroup;
+			children = (
+				13706F841D74146A000903D8 /* Segues.swift */,
+				13706F7E1D741291000903D8 /* SecondViewController.swift */,
+				13706F821D7413A4000903D8 /* AnotherViewController.swift */,
+				13706F7F1D741291000903D8 /* SecondViewController.xib */,
+			);
+			name = Segue;
+			sourceTree = "<group>";
+		};
+		13728E481D99616B000A20B6 /* NavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				13D9A7641D99861700844A1A /* DemoDelegate.swift */,
+				13728E461D996166000A20B6 /* FirstVC.swift */,
+			);
+			name = NavigationController;
+			sourceTree = "<group>";
+		};
 		13B447181D740CF6002CDAE1 = {
 			isa = PBXGroup;
 			children = (
@@ -80,12 +104,10 @@
 			isa = PBXGroup;
 			children = (
 				13B447241D740CF6002CDAE1 /* AppDelegate.swift */,
-				13706F841D74146A000903D8 /* Segues.swift */,
 				13B447261D740CF6002CDAE1 /* ViewController.swift */,
-				13706F7E1D741291000903D8 /* SecondViewController.swift */,
-				13706F821D7413A4000903D8 /* AnotherViewController.swift */,
+				13728E451D996136000A20B6 /* Segue */,
+				13728E481D99616B000A20B6 /* NavigationController */,
 				13B447281D740CF6002CDAE1 /* Main.storyboard */,
-				13706F7F1D741291000903D8 /* SecondViewController.xib */,
 				13B4472B1D740CF6002CDAE1 /* Assets.xcassets */,
 				13B4472D1D740CF6002CDAE1 /* LaunchScreen.storyboard */,
 				13B447301D740CF6002CDAE1 /* Info.plist */,
@@ -176,6 +198,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				13706F801D741291000903D8 /* SecondViewController.swift in Sources */,
+				13728E471D996166000A20B6 /* FirstVC.swift in Sources */,
+				13D9A7651D99861700844A1A /* DemoDelegate.swift in Sources */,
 				13B447271D740CF6002CDAE1 /* ViewController.swift in Sources */,
 				13706F851D74146A000903D8 /* Segues.swift in Sources */,
 				13706F831D7413A4000903D8 /* AnotherViewController.swift in Sources */,

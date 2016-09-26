@@ -8,13 +8,34 @@
 
 import UIKit
 
-class JDNavigationDelegate: NSObject, UINavigationControllerDelegate {
-    private let animator = JDAnimator()
+/// Override class, pushAnimator() and popAnimator() to customize transitions
+open class JDNavigationDelegate: NSObject, UINavigationControllerDelegate {
     
-    func navigationController(navigationController: UINavigationController,
-                              animationControllerForOperation operation: UINavigationControllerOperation,
-                              fromViewController fromVC: UIViewController,
-                              toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return animator
+    // MARK: - UINavigationControllerDelegate
+    
+    public func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        
+        switch operation {
+        case .pop:
+            return popAnimator()
+        case .push:
+            return pushAnimator()
+        case .none:
+            return nil
+        }
+    }
+    
+    // MARK: - Open Methods
+    
+    /// Override to use custom pop transitions
+    /// - parameter Default: calls pushAnimator
+    open func popAnimator() -> JDAnimator? {
+        return pushAnimator()
+    }
+    
+    /// Override to use custom push transitions
+    open func pushAnimator() -> JDAnimator? {
+        NSLog("[JDTransition] JDNavigationDelegate.pushAnimator() is not overridden")
+        return nil
     }
 }

@@ -9,12 +9,22 @@
 import Foundation
 
 class JDAnimationSlideFrom {
-    
-    class func left(fromVC: UIViewController, toVC: UIViewController, completion: @escaping (Bool) -> ()) {
-        animate(fromVC: fromVC, toVC: toVC, direction: .left, completion: completion)
+
+    class func left(fromVC: UIViewController, toVC: UIViewController, duration: TimeInterval, options: UIViewAnimationOptions?, completion: @escaping (Bool) -> ()) {
+        animate(fromVC: fromVC, toVC: toVC, duration: duration, options: options, direction: .left, completion: completion)
+    }
+
+    class func right(fromVC: UIViewController, toVC: UIViewController, duration: TimeInterval, options: UIViewAnimationOptions?, completion: @escaping (Bool) -> ()) {
+        animate(fromVC: fromVC, toVC: toVC, duration: duration, options: options, direction: .right, completion: completion)
     }
     
-    private static var transitionTime: TimeInterval = 0.5
+    class func bottom(fromVC: UIViewController, toVC: UIViewController, duration: TimeInterval, options: UIViewAnimationOptions?, completion: @escaping (Bool) -> ()) {
+        animate(fromVC: fromVC, toVC: toVC, duration: duration, options: options, direction: .bottom, completion: completion)
+    }
+    
+    class func top(fromVC: UIViewController, toVC: UIViewController, duration: TimeInterval, options: UIViewAnimationOptions?, completion: @escaping (Bool) -> ()) {
+        animate(fromVC: fromVC, toVC: toVC, duration: duration, options: options, direction: .top, completion: completion)
+    }
     
     enum Direction {
         case left
@@ -23,26 +33,25 @@ class JDAnimationSlideFrom {
         case top
     }
     
-    private class func animate(fromVC: UIViewController, toVC: UIViewController, direction: Direction, completion: @escaping (Bool) -> ()) {
+    private class func animate(fromVC: UIViewController, toVC: UIViewController, duration: TimeInterval, options opt: UIViewAnimationOptions?, direction: Direction, completion: @escaping (Bool) -> ()) {
+
+        let options = opt ?? .curveLinear
+
+        toVC.view.frame = fromVC.view.frame
+        toVC.view.center = JDAnimationSlideFrom.destinationCenter(fromVC: fromVC, direction: direction)
         
-//        toVC.view.frame = fromVC.view.frame
-        toVC.view.center = destinationCenter(fromVC: fromVC, direction: direction)
-        
-//        fromVC.view.window!.addSubview(toVC.view)
-        
-        UIView.animate(withDuration: transitionTime, delay: 0, options: .curveLinear, animations: {
+        UIView.animate(withDuration: duration, delay: 0, options: options, animations: {
             
             toVC.view.center = fromVC.view.center
-            fromVC.view.center = self.sourceCenter(fromVC: fromVC, direction: direction)
-            
+            fromVC.view.center = JDAnimationSlideFrom.sourceCenter(fromVC: fromVC, direction: direction)
+
         }) { finished in
-            
             completion(finished)
         }
     }
-    
-    
+
     private class func sourceCenter(fromVC: UIViewController, direction: Direction) -> CGPoint {
+
         let center = fromVC.view.center
         let frame = fromVC.view.frame
         
@@ -53,11 +62,12 @@ class JDAnimationSlideFrom {
         case .top: return CGPoint(x: center.x, y: center.y + frame.height)
         }
     }
-    
+
     private class func destinationCenter(fromVC: UIViewController, direction: Direction) -> CGPoint {
+
         let center = fromVC.view.center
         let frame = fromVC.view.frame
-        
+
         switch direction {
         case .left: return CGPoint(x: center.x - frame.width, y: center.y)
         case .right: return CGPoint(x: center.x + frame.width, y: center.y)
@@ -65,5 +75,4 @@ class JDAnimationSlideFrom {
         case .top: return CGPoint(x: center.x, y: center.y - frame.height)
         }
     }
-    
 }

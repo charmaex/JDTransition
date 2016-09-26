@@ -10,14 +10,6 @@ import UIKit
 
 class SecondViewController: UIViewController {
 
-    init() {
-        super.init(nibName: "SecondViewController", bundle: nil)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-
     @IBAction func dismiss(_ sender: UIButton) {
         self.dismiss(animated: false, completion: nil)
     }

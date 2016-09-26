@@ -10,7 +10,7 @@ import UIKit
 
 /// Segue where the next screen scales in from a point or the center of the screen.
 @objc
-open class JDSegueScaleIn: UIStoryboardSegue, JDSegueDelayable, JDSegueOriginable {
+open class JDSegueScaleIn: UIStoryboardSegue, JDSegueOriginable {
     
     /// Defines at which point the animation should start
     /// - parameter Default: center of the screen
@@ -19,10 +19,6 @@ open class JDSegueScaleIn: UIStoryboardSegue, JDSegueDelayable, JDSegueOriginabl
     /// Time the transition animation takes
     /// - parameter Default: 0.5 seconds
      open var transitionTime: TimeInterval = 0.5
-    
-    /// Time the transition animation is delayed after calling
-    /// - parameter Default: 0 seconds
-    open var transitionDelay: TimeInterval = 0
     
     /// Animation Curve
     /// - parameter Default: CurveLinear
@@ -42,17 +38,15 @@ open class JDSegueScaleIn: UIStoryboardSegue, JDSegueDelayable, JDSegueOriginabl
             destinationVC.view.center = center
         }
         
-        delay() {
-            sourceVC.view.addSubview(destinationVC.view)
+        sourceVC.view.addSubview(destinationVC.view)
+        
+        UIView.animate(withDuration: self.transitionTime, delay: 0, options: self.animationOption, animations: {
             
-            UIView.animate(withDuration: self.transitionTime, delay: 0, options: self.animationOption, animations: {
-                
-                destinationVC.view.transform = CGAffineTransform(scaleX: 1, y: 1)
-                destinationVC.view.center = destCenter
-                
-            }) { finished in
-                self.finishSegue(nil)
-            }
+            destinationVC.view.transform = CGAffineTransform(scaleX: 1, y: 1)
+            destinationVC.view.center = destCenter
+            
+        }) { finished in
+            self.finishSegue(nil)
         }
     }
 }

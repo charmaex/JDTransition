@@ -1,5 +1,5 @@
 //
-//  JDSegue.swift
+//  JDSegueProtocol.swift
 //  JDSegues
 //
 //  Created by Jan Dammshäuser on 29.08.16.
@@ -10,7 +10,7 @@ import UIKit
 
 /// Blueprint for JDSegues
 @objc
-public protocol JDSegue {
+public protocol JDSegueProtocol {
     
     /// Animation Curve
     /// - parameter Default: x
@@ -21,7 +21,15 @@ public protocol JDSegue {
     var transitionTime: TimeInterval { get set }
 }
 
-extension JDSegue where Self: UIStoryboardSegue {
+/// Blueprint for JDSegues which can have an origin for their animation
+public protocol JDSegueOriginable: JDSegueProtocol {
+    
+    /// Defines at which point the animation should start
+    /// - parameter Default: center of the screen
+    var animationOrigin: CGPoint? { get set }
+}
+
+extension JDSegueProtocol where Self: UIStoryboardSegue {
     
     func setupScreens() {
         destination.view.frame = source.view.frame

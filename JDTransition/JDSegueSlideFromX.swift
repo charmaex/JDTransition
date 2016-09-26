@@ -34,15 +34,11 @@ open class JDSegueSlideFromBottom: JDSegueSlideFromRight {
 
 /// Segue where the next screen slides in from right.
 @objc
-open class JDSegueSlideFromRight: UIStoryboardSegue, JDSegueDelayable {
+open class JDSegueSlideFromRight: UIStoryboardSegue, JDSegueProtocol {
     
     /// Time the transition animation takes
     /// - parameter Default: 0.5 seconds
     open var transitionTime: TimeInterval = 0.5
-    
-    /// Time the transition animation is delayed after calling
-    /// - parameter Default: 0 seconds
-    open var transitionDelay: TimeInterval = 0
     
     /// Animation Curve
     /// - parameter Default: CurveLinear
@@ -53,50 +49,17 @@ open class JDSegueSlideFromRight: UIStoryboardSegue, JDSegueDelayable {
     }
     
     open override func perform() {
-        let sourceVC = source
-        let destinationVC = destination
+        let fromVC = source
+        let toVC = destination
         
         setupScreens()
-        
-        destinationVC.view.center = destinationCenter
-        
-        delay() {
-            sourceVC.view.window!.addSubview(destinationVC.view)
-            
-            UIView.animate(withDuration: self.transitionTime, delay: 0, options: self.animationOption, animations: {
-
-                destinationVC.view.center = self.source.view.center
-                sourceVC.view.center = self.sourceCenter
-                
-            }) { finished in
-                
-                self.finishSegue(nil)
-            }
-        }
-    }
-    
-    
-    var sourceCenter: CGPoint {
-        let center = source.view.center
-        let frame = source.view.frame
+        fromVC.view.window!.addSubview(toVC.view)
         
         switch direction {
-        case .left: return CGPoint(x: center.x + frame.width, y: center.y)
-        case .right: return CGPoint(x: center.x - frame.width, y: center.y)
-        case .bottom: return CGPoint(x: center.x, y: center.y - frame.height)
-        case .top: return CGPoint(x: center.x, y: center.y + frame.height)
-        }
-    }
-    
-    var destinationCenter: CGPoint {
-        let center = source.view.center
-        let frame = source.view.frame
-        
-        switch direction {
-        case .left: return CGPoint(x: center.x - frame.width, y: center.y)
-        case .right: return CGPoint(x: center.x + frame.width, y: center.y)
-        case .bottom: return CGPoint(x: center.x, y: center.y + frame.height)
-        case .top: return CGPoint(x: center.x, y: center.y - frame.height)
+        case .left: JDAnimationSlideFrom.left(fromVC: fromVC, toVC: toVC, duration: transitionTime, options: animationOption) { [weak self] _ in self?.finishSegue(nil) }
+        case .right: JDAnimationSlideFrom.right(fromVC: fromVC, toVC: toVC, duration: transitionTime, options: animationOption) { [weak self] _ in self?.finishSegue(nil) }
+        case .bottom: JDAnimationSlideFrom.bottom(fromVC: fromVC, toVC: toVC, duration: transitionTime, options: animationOption) { [weak self] _ in self?.finishSegue(nil) }
+        case .top: JDAnimationSlideFrom.top(fromVC: fromVC, toVC: toVC, duration: transitionTime, options: animationOption) { [weak self] _ in self?.finishSegue(nil) }
         }
     }
 }

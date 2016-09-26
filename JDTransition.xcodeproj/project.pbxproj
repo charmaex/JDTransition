@@ -11,12 +11,10 @@
 		130A3FFA1D789AB1004E9583 /* JDSegueSlideFromX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130A3FF41D789AB1004E9583 /* JDSegueSlideFromX.swift */; };
 		130A3FFB1D789AB1004E9583 /* JDSegueScaleOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130A3FF51D789AB1004E9583 /* JDSegueScaleOut.swift */; };
 		130A3FFC1D789AB1004E9583 /* JDSegueScaleIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130A3FF61D789AB1004E9583 /* JDSegueScaleIn.swift */; };
-		130A3FFD1D789AB1004E9583 /* JDSegueOriginable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130A3FF71D789AB1004E9583 /* JDSegueOriginable.swift */; };
-		130A3FFE1D789AB1004E9583 /* JDSegueDelayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130A3FF81D789AB1004E9583 /* JDSegueDelayable.swift */; };
-		130A3FFF1D789AB1004E9583 /* JDSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130A3FF91D789AB1004E9583 /* JDSegue.swift */; };
-		13728E3E1D9956EC000A20B6 /* JDNavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13728E3D1D9956EC000A20B6 /* JDNavigationDelegate.swift */; };
+		130A3FFF1D789AB1004E9583 /* JDSegueProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130A3FF91D789AB1004E9583 /* JDSegueProtocol.swift */; };
 		13728E421D9958F1000A20B6 /* JDAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13728E411D9958F1000A20B6 /* JDAnimator.swift */; };
 		13728E441D995923000A20B6 /* JDSlideFromXAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13728E431D995923000A20B6 /* JDSlideFromXAnimation.swift */; };
+		13D9A7631D99833D00844A1A /* JDNavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D9A7621D99833D00844A1A /* JDNavigationDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,12 +24,10 @@
 		130A3FF41D789AB1004E9583 /* JDSegueSlideFromX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDSegueSlideFromX.swift; sourceTree = "<group>"; };
 		130A3FF51D789AB1004E9583 /* JDSegueScaleOut.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDSegueScaleOut.swift; sourceTree = "<group>"; };
 		130A3FF61D789AB1004E9583 /* JDSegueScaleIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDSegueScaleIn.swift; sourceTree = "<group>"; };
-		130A3FF71D789AB1004E9583 /* JDSegueOriginable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDSegueOriginable.swift; sourceTree = "<group>"; };
-		130A3FF81D789AB1004E9583 /* JDSegueDelayable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDSegueDelayable.swift; sourceTree = "<group>"; };
-		130A3FF91D789AB1004E9583 /* JDSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDSegue.swift; sourceTree = "<group>"; };
-		13728E3D1D9956EC000A20B6 /* JDNavigationDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDNavigationDelegate.swift; sourceTree = "<group>"; };
+		130A3FF91D789AB1004E9583 /* JDSegueProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDSegueProtocol.swift; sourceTree = "<group>"; };
 		13728E411D9958F1000A20B6 /* JDAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDAnimator.swift; sourceTree = "<group>"; };
 		13728E431D995923000A20B6 /* JDSlideFromXAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDSlideFromXAnimation.swift; sourceTree = "<group>"; };
+		13D9A7621D99833D00844A1A /* JDNavigationDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDNavigationDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				13728E3F1D9958BB000A20B6 /* Animations */,
-				13728E401D9958C7000A20B6 /* NavigationController */,
+				13D9A7691D99930100844A1A /* NavigationController */,
 				130A40011D789ABE004E9583 /* Segues */,
 				130A3FEC1D789A0F004E9583 /* JDTransition.h */,
 				130A3FEE1D789A0F004E9583 /* Info.plist */,
@@ -76,22 +72,12 @@
 		130A40011D789ABE004E9583 /* Segues */ = {
 			isa = PBXGroup;
 			children = (
-				130A40021D789AC6004E9583 /* Protocols */,
+				130A3FF91D789AB1004E9583 /* JDSegueProtocol.swift */,
 				130A3FF41D789AB1004E9583 /* JDSegueSlideFromX.swift */,
 				130A3FF51D789AB1004E9583 /* JDSegueScaleOut.swift */,
 				130A3FF61D789AB1004E9583 /* JDSegueScaleIn.swift */,
 			);
 			name = Segues;
-			sourceTree = "<group>";
-		};
-		130A40021D789AC6004E9583 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				130A3FF71D789AB1004E9583 /* JDSegueOriginable.swift */,
-				130A3FF81D789AB1004E9583 /* JDSegueDelayable.swift */,
-				130A3FF91D789AB1004E9583 /* JDSegue.swift */,
-			);
-			name = Protocols;
 			sourceTree = "<group>";
 		};
 		13728E3F1D9958BB000A20B6 /* Animations */ = {
@@ -102,10 +88,10 @@
 			name = Animations;
 			sourceTree = "<group>";
 		};
-		13728E401D9958C7000A20B6 /* NavigationController */ = {
+		13D9A7691D99930100844A1A /* NavigationController */ = {
 			isa = PBXGroup;
 			children = (
-				13728E3D1D9956EC000A20B6 /* JDNavigationDelegate.swift */,
+				13D9A7621D99833D00844A1A /* JDNavigationDelegate.swift */,
 				13728E411D9958F1000A20B6 /* JDAnimator.swift */,
 			);
 			name = NavigationController;
@@ -190,14 +176,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				130A3FFE1D789AB1004E9583 /* JDSegueDelayable.swift in Sources */,
-				130A3FFF1D789AB1004E9583 /* JDSegue.swift in Sources */,
+				130A3FFF1D789AB1004E9583 /* JDSegueProtocol.swift in Sources */,
 				13728E441D995923000A20B6 /* JDSlideFromXAnimation.swift in Sources */,
 				130A3FFA1D789AB1004E9583 /* JDSegueSlideFromX.swift in Sources */,
-				13728E3E1D9956EC000A20B6 /* JDNavigationDelegate.swift in Sources */,
 				13728E421D9958F1000A20B6 /* JDAnimator.swift in Sources */,
-				130A3FFD1D789AB1004E9583 /* JDSegueOriginable.swift in Sources */,
 				130A3FFB1D789AB1004E9583 /* JDSegueScaleOut.swift in Sources */,
+				13D9A7631D99833D00844A1A /* JDNavigationDelegate.swift in Sources */,
 				130A3FFC1D789AB1004E9583 /* JDSegueScaleIn.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
