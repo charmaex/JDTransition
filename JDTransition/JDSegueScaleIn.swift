@@ -26,26 +26,12 @@ open class JDSegueScaleIn: UIStoryboardSegue, JDSegueOriginable {
     
     
     open override func perform() {
-        let sourceVC = source
-        let destinationVC = destination
-        let destCenter = sourceVC.view.center
+        let fromVC = source
+        let toVC = destination
+
+        fromVC.view.addSubview(toVC.view)
         
-        setupScreens()
-        
-        destinationVC.view.transform = CGAffineTransform(scaleX: 0.05, y: 0.05)
-        
-        if let center = animationOrigin {
-            destinationVC.view.center = center
-        }
-        
-        sourceVC.view.addSubview(destinationVC.view)
-        
-        UIView.animate(withDuration: self.transitionTime, delay: 0, options: self.animationOption, animations: {
-            
-            destinationVC.view.transform = CGAffineTransform(scaleX: 1, y: 1)
-            destinationVC.view.center = destCenter
-            
-        }) { finished in
+        JDAnimationScale.in(fromVC: fromVC, toVC: toVC, duration: transitionTime, options: animationOption) { _ in
             self.finishSegue(nil)
         }
     }

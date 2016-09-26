@@ -24,7 +24,7 @@ public class JDAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         return animation
     }
     
-    /// All animation types of JDTransition
+    /// All animations of JDTransition
     public enum AnimationType {
         case slideFromLeft, slideFromRight, slideFromBottom, slideFromTop
     }

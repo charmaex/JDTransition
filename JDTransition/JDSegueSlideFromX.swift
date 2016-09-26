@@ -52,7 +52,6 @@ open class JDSegueSlideFromRight: UIStoryboardSegue, JDSegueProtocol {
         let fromVC = source
         let toVC = destination
         
-        setupScreens()
         fromVC.view.window!.addSubview(toVC.view)
         
         switch direction {

@@ -1,5 +1,5 @@
 //
-//  JDSlideFromXAnimation.swift
+//  JDAnimationSlideFrom.swift
 //  JDTransition
 //
 //  Created by Jan Dammshäuser on 26.09.16.

@@ -18,10 +18,9 @@ class ViewController: UIViewController {
     @IBAction func lowerBtn(_ sender: UIButton) {
         let nextVC = SecondViewController()
         
-        let segue = JDSegueScaleIn(identifier: nil, source: self, destination: nextVC)
+        let segue = JDSegueScaleOut(identifier: nil, source: self, destination: nextVC)
         
         segue.animationOrigin = sender.center
-        segue.transitionDelay = 1
         segue.transitionTime = 2
         
         segue.perform()

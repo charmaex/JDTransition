@@ -13,8 +13,9 @@
 		130A3FFC1D789AB1004E9583 /* JDSegueScaleIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130A3FF61D789AB1004E9583 /* JDSegueScaleIn.swift */; };
 		130A3FFF1D789AB1004E9583 /* JDSegueProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130A3FF91D789AB1004E9583 /* JDSegueProtocol.swift */; };
 		13728E421D9958F1000A20B6 /* JDAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13728E411D9958F1000A20B6 /* JDAnimator.swift */; };
-		13728E441D995923000A20B6 /* JDSlideFromXAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13728E431D995923000A20B6 /* JDSlideFromXAnimation.swift */; };
+		13728E441D995923000A20B6 /* JDAnimationSlideFrom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13728E431D995923000A20B6 /* JDAnimationSlideFrom.swift */; };
 		13D9A7631D99833D00844A1A /* JDNavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D9A7621D99833D00844A1A /* JDNavigationDelegate.swift */; };
+		13D9A76D1D99BAD100844A1A /* JDAnimationScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D9A76C1D99BAD100844A1A /* JDAnimationScale.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,8 +27,9 @@
 		130A3FF61D789AB1004E9583 /* JDSegueScaleIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDSegueScaleIn.swift; sourceTree = "<group>"; };
 		130A3FF91D789AB1004E9583 /* JDSegueProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDSegueProtocol.swift; sourceTree = "<group>"; };
 		13728E411D9958F1000A20B6 /* JDAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDAnimator.swift; sourceTree = "<group>"; };
-		13728E431D995923000A20B6 /* JDSlideFromXAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDSlideFromXAnimation.swift; sourceTree = "<group>"; };
+		13728E431D995923000A20B6 /* JDAnimationSlideFrom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDAnimationSlideFrom.swift; sourceTree = "<group>"; };
 		13D9A7621D99833D00844A1A /* JDNavigationDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDNavigationDelegate.swift; sourceTree = "<group>"; };
+		13D9A76C1D99BAD100844A1A /* JDAnimationScale.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDAnimationScale.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +85,8 @@
 		13728E3F1D9958BB000A20B6 /* Animations */ = {
 			isa = PBXGroup;
 			children = (
-				13728E431D995923000A20B6 /* JDSlideFromXAnimation.swift */,
+				13728E431D995923000A20B6 /* JDAnimationSlideFrom.swift */,
+				13D9A76C1D99BAD100844A1A /* JDAnimationScale.swift */,
 			);
 			name = Animations;
 			sourceTree = "<group>";
@@ -177,12 +180,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				130A3FFF1D789AB1004E9583 /* JDSegueProtocol.swift in Sources */,
-				13728E441D995923000A20B6 /* JDSlideFromXAnimation.swift in Sources */,
+				13728E441D995923000A20B6 /* JDAnimationSlideFrom.swift in Sources */,
 				130A3FFA1D789AB1004E9583 /* JDSegueSlideFromX.swift in Sources */,
 				13728E421D9958F1000A20B6 /* JDAnimator.swift in Sources */,
 				130A3FFB1D789AB1004E9583 /* JDSegueScaleOut.swift in Sources */,
 				13D9A7631D99833D00844A1A /* JDNavigationDelegate.swift in Sources */,
 				130A3FFC1D789AB1004E9583 /* JDSegueScaleIn.swift in Sources */,
+				13D9A76D1D99BAD100844A1A /* JDAnimationScale.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

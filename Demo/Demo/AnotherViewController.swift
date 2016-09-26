@@ -13,5 +13,4 @@ class AnotherViewController: UIViewController {
     @IBAction func dismiss(_ sender: UIButton) {
         self.dismiss(animated: false, completion: nil)
     }
-
 }
