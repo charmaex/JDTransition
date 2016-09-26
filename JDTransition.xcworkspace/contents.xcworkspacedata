@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:../JDCoordinator/JDCoordinator.podspec">
+      location = "group:JDTransition.podspec">
    </FileRef>
    <FileRef
       location = "group:JDTransition.xcodeproj">
