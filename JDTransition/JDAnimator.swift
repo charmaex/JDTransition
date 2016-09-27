@@ -30,15 +30,15 @@ public class JDAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         case scaleIn, scaleOut
     }
     
-    private func animate(from fromVC: UIViewController, to toVC: UIViewController, completion: @escaping () -> ()) {
+    private func animate(in window: UIView, from fromVC: UIViewController, to toVC: UIViewController, completion: @escaping () -> ()) {
         
         switch animation {
-        case .slideFromLeft: JDAnimationSlideFrom.left(fromVC: fromVC, toVC: toVC, duration: transitionTime, options: transitionOptions) { _ in completion() }
-        case .slideFromRight: JDAnimationSlideFrom.right(fromVC: fromVC, toVC: toVC, duration: transitionTime, options: transitionOptions) { _ in completion() }
-        case .slideFromBottom: JDAnimationSlideFrom.bottom(fromVC: fromVC, toVC: toVC, duration: transitionTime, options: transitionOptions) { _ in completion() }
-        case .slideFromTop: JDAnimationSlideFrom.top(fromVC: fromVC, toVC: toVC, duration: transitionTime, options: transitionOptions) { _ in completion() }
-        case .scaleIn: JDAnimationScale.in(fromVC: fromVC, toVC: toVC, duration: transitionTime, options: transitionOptions) { _ in completion() }
-        case .scaleOut: JDAnimationScale.out(fromVC: fromVC, toVC: toVC, duration: transitionTime, options: transitionOptions) { _ in completion() }
+        case .slideFromLeft: JDAnimationSlideFrom.left(inWindow: window, fromVC: fromVC, toVC: toVC, duration: transitionTime, options: transitionOptions) { _ in completion() }
+        case .slideFromRight: JDAnimationSlideFrom.right(inWindow: window, fromVC: fromVC, toVC: toVC, duration: transitionTime, options: transitionOptions) { _ in completion() }
+        case .slideFromBottom: JDAnimationSlideFrom.bottom(inWindow: window, fromVC: fromVC, toVC: toVC, duration: transitionTime, options: transitionOptions) { _ in completion() }
+        case .slideFromTop: JDAnimationSlideFrom.top(inWindow: window, fromVC: fromVC, toVC: toVC, duration: transitionTime, options: transitionOptions) { _ in completion() }
+        case .scaleIn: JDAnimationScale.in(inWindow: window, fromVC: fromVC, toVC: toVC, duration: transitionTime, options: transitionOptions) { _ in completion() }
+        case .scaleOut: JDAnimationScale.out(inWindow: window, fromVC: fromVC, toVC: toVC, duration: transitionTime, options: transitionOptions) { _ in completion() }
         }
     }
     
@@ -86,10 +86,10 @@ public class JDAnimator: NSObject, UIViewControllerAnimatedTransitioning {
             NSLog("[JDTransition] JDAnimator has no fromVC")
             return
         }
-
-        context.containerView.addSubview(toVC.view)
         
-        animate(from: fromVC, to: toVC) {
+        let animationWindow = context.containerView
+        
+        animate(in: animationWindow,from: fromVC, to: toVC) {
             context.completeTransition(!context.transitionWasCancelled)
         }
     }

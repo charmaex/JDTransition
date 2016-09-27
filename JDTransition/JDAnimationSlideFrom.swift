@@ -10,20 +10,20 @@ import Foundation
 
 struct JDAnimationSlideFrom {
 
-    static func left(fromVC: UIViewController, toVC: UIViewController, duration: TimeInterval, options: UIViewAnimationOptions?, completion: @escaping (Bool) -> ()) {
-        animate(fromVC: fromVC, toVC: toVC, duration: duration, options: options, direction: .left, completion: completion)
+    static func left(inWindow window: UIView, fromVC: UIViewController, toVC: UIViewController, duration: TimeInterval, options: UIViewAnimationOptions?, completion: @escaping (Bool) -> ()) {
+        animate(in: window, fromVC: fromVC, toVC: toVC, duration: duration, options: options, direction: .left, completion: completion)
     }
 
-    static func right(fromVC: UIViewController, toVC: UIViewController, duration: TimeInterval, options: UIViewAnimationOptions?, completion: @escaping (Bool) -> ()) {
-        animate(fromVC: fromVC, toVC: toVC, duration: duration, options: options, direction: .right, completion: completion)
+    static func right(inWindow window: UIView, fromVC: UIViewController, toVC: UIViewController, duration: TimeInterval, options: UIViewAnimationOptions?, completion: @escaping (Bool) -> ()) {
+        animate(in: window, fromVC: fromVC, toVC: toVC, duration: duration, options: options, direction: .right, completion: completion)
     }
     
-    static func bottom(fromVC: UIViewController, toVC: UIViewController, duration: TimeInterval, options: UIViewAnimationOptions?, completion: @escaping (Bool) -> ()) {
-        animate(fromVC: fromVC, toVC: toVC, duration: duration, options: options, direction: .bottom, completion: completion)
+    static func bottom(inWindow window: UIView, fromVC: UIViewController, toVC: UIViewController, duration: TimeInterval, options: UIViewAnimationOptions?, completion: @escaping (Bool) -> ()) {
+        animate(in: window, fromVC: fromVC, toVC: toVC, duration: duration, options: options, direction: .bottom, completion: completion)
     }
     
-    static func top(fromVC: UIViewController, toVC: UIViewController, duration: TimeInterval, options: UIViewAnimationOptions?, completion: @escaping (Bool) -> ()) {
-        animate(fromVC: fromVC, toVC: toVC, duration: duration, options: options, direction: .top, completion: completion)
+    static func top(inWindow window: UIView, fromVC: UIViewController, toVC: UIViewController, duration: TimeInterval, options: UIViewAnimationOptions?, completion: @escaping (Bool) -> ()) {
+        animate(in: window, fromVC: fromVC, toVC: toVC, duration: duration, options: options, direction: .top, completion: completion)
     }
     
     enum Direction {
@@ -33,12 +33,14 @@ struct JDAnimationSlideFrom {
         case top
     }
     
-    private static func animate(fromVC: UIViewController, toVC: UIViewController, duration: TimeInterval, options opt: UIViewAnimationOptions?, direction: Direction, completion: @escaping (Bool) -> ()) {
+    private static func animate(in window: UIView, fromVC: UIViewController, toVC: UIViewController, duration: TimeInterval, options opt: UIViewAnimationOptions?, direction: Direction, completion: @escaping (Bool) -> ()) {
 
         let options = opt ?? .curveLinear
         let centerToVC = originToVC(fromVC: fromVC, direction: direction)
         let centerFromVC = destinationFromVC(fromVC: fromVC, direction: direction)
 
+        window.addSubview(toVC.view)
+        
         toVC.view.frame = fromVC.view.frame
         toVC.view.center = centerToVC
         

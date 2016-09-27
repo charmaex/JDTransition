@@ -10,7 +10,10 @@ import Foundation
 
 struct JDAnimationScale {
  
-    static func out(fromVC: UIViewController, toVC: UIViewController, duration: TimeInterval, options opt: UIViewAnimationOptions?, completion: @escaping (Bool) -> ()) {
+    static func out(inWindow window: UIView, fromVC: UIViewController, toVC: UIViewController, duration: TimeInterval, options opt: UIViewAnimationOptions?, completion: @escaping (Bool) -> ()) {
+        
+        window.addSubview(toVC.view)
+        window.sendSubview(toBack: toVC.view)
         
         toVC.view.frame = fromVC.view.frame
         
@@ -24,7 +27,9 @@ struct JDAnimationScale {
         }
     }
 
-    static func `in`(fromVC: UIViewController, toVC: UIViewController, duration: TimeInterval, options opt: UIViewAnimationOptions?, completion: @escaping (Bool) -> ()) {
+    static func `in`(inWindow window: UIView, fromVC: UIViewController, toVC: UIViewController, duration: TimeInterval, options opt: UIViewAnimationOptions?, completion: @escaping (Bool) -> ()) {
+        
+        window.addSubview(toVC.view)
         
         toVC.view.frame = fromVC.view.frame
         

@@ -52,13 +52,15 @@ open class JDSegueSlideFromRight: UIStoryboardSegue, JDSegueProtocol {
         let fromVC = source
         let toVC = destination
         
-        fromVC.view.window!.addSubview(toVC.view)
+        guard let window = fromVC.view.window else {
+            return NSLog("[JDTransition] JDSeguelSlideFromX could not get views window")
+        }
         
         switch direction {
-        case .left: JDAnimationSlideFrom.left(fromVC: fromVC, toVC: toVC, duration: transitionTime, options: animationOption) { [weak self] _ in self?.finishSegue(nil) }
-        case .right: JDAnimationSlideFrom.right(fromVC: fromVC, toVC: toVC, duration: transitionTime, options: animationOption) { [weak self] _ in self?.finishSegue(nil) }
-        case .bottom: JDAnimationSlideFrom.bottom(fromVC: fromVC, toVC: toVC, duration: transitionTime, options: animationOption) { [weak self] _ in self?.finishSegue(nil) }
-        case .top: JDAnimationSlideFrom.top(fromVC: fromVC, toVC: toVC, duration: transitionTime, options: animationOption) { [weak self] _ in self?.finishSegue(nil) }
+        case .left: JDAnimationSlideFrom.left(inWindow: window, fromVC: fromVC, toVC: toVC, duration: transitionTime, options: animationOption) { [weak self] _ in self?.finishSegue(nil) }
+        case .right: JDAnimationSlideFrom.right(inWindow: window, fromVC: fromVC, toVC: toVC, duration: transitionTime, options: animationOption) { [weak self] _ in self?.finishSegue(nil) }
+        case .bottom: JDAnimationSlideFrom.bottom(inWindow: window, fromVC: fromVC, toVC: toVC, duration: transitionTime, options: animationOption) { [weak self] _ in self?.finishSegue(nil) }
+        case .top: JDAnimationSlideFrom.top(inWindow: window, fromVC: fromVC, toVC: toVC, duration: transitionTime, options: animationOption) { [weak self] _ in self?.finishSegue(nil) }
         }
     }
 }

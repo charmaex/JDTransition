@@ -29,9 +29,11 @@ open class JDSegueScaleIn: UIStoryboardSegue, JDSegueOriginable {
         let fromVC = source
         let toVC = destination
 
-        fromVC.view.addSubview(toVC.view)
+        guard let window = fromVC.view else {
+            return NSLog("[JDTransition] JDSegueScaleIn could not get view")
+        }
         
-        JDAnimationScale.in(fromVC: fromVC, toVC: toVC, duration: transitionTime, options: animationOption) { _ in
+        JDAnimationScale.in(inWindow: window, fromVC: fromVC, toVC: toVC, duration: transitionTime, options: animationOption) { _ in
             self.finishSegue(nil)
         }
     }

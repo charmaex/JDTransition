@@ -29,9 +29,11 @@ open class JDSegueScaleOut: UIStoryboardSegue, JDSegueOriginable {
         let fromVC = source
         let toVC = destination
         
-        fromVC.view.window!.insertSubview(toVC.view, belowSubview: fromVC.view)
+        guard let window = fromVC.view.window else {
+            return NSLog("[JDTransition] JDSegueScaleOut could not get views window")
+        }
         
-        JDAnimationScale.out(fromVC: fromVC, toVC: toVC, duration: transitionTime, options: animationOption) { _ in
+        JDAnimationScale.out(inWindow: window, fromVC: fromVC, toVC: toVC, duration: transitionTime, options: animationOption) { _ in
             self.finishSegue(nil)
         }
         
