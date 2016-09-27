@@ -36,8 +36,8 @@ struct JDAnimationSlideFrom {
     private static func animate(in window: UIView, fromVC: UIViewController, toVC: UIViewController, duration: TimeInterval, options opt: UIViewAnimationOptions?, direction: Direction, completion: @escaping (Bool) -> ()) {
 
         let options = opt ?? .curveLinear
-        let centerToVC = originToVC(fromVC: fromVC, direction: direction)
-        let centerFromVC = destinationFromVC(fromVC: fromVC, direction: direction)
+        let centerToVC = origin(fromVC: fromVC, direction: direction)
+        let centerFromVC = destination(fromVC: fromVC, direction: direction)
 
         window.addSubview(toVC.view)
         
@@ -54,7 +54,7 @@ struct JDAnimationSlideFrom {
         }
     }
 
-    private static func destinationFromVC(fromVC: UIViewController, direction: Direction) -> CGPoint {
+    private static func destination(fromVC: UIViewController, direction: Direction) -> CGPoint {
 
         let center = fromVC.view.center
         let frame = fromVC.view.frame
@@ -67,7 +67,7 @@ struct JDAnimationSlideFrom {
         }
     }
 
-    private static func originToVC(fromVC: UIViewController, direction: Direction) -> CGPoint {
+    private static func origin(fromVC: UIViewController, direction: Direction) -> CGPoint {
 
         let center = fromVC.view.center
         let frame = fromVC.view.frame
