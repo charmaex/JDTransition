@@ -72,7 +72,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FSv-d8-JdI">
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Next View"/>
                                 <connections>
                                     <action selector="pushVCWithSender:" destination="9Pg-Xu-QG1" eventType="touchUpInside" id="3Sj-ti-Ggm"/>
                                 </connections>
