@@ -17,9 +17,9 @@ open class JDNavigationDelegate: NSObject, UINavigationControllerDelegate {
         
         switch operation {
         case .pop:
-            return popAnimator()
+            return popAnimator(from: fromVC, to: toVC)
         case .push:
-            return pushAnimator()
+            return pushAnimator(from: fromVC, to: toVC)
         case .none:
             return nil
         }
@@ -29,13 +29,13 @@ open class JDNavigationDelegate: NSObject, UINavigationControllerDelegate {
     
     /// Override to use custom pop transitions
     /// - parameter Default: calls pushAnimator
-    open func popAnimator() -> JDAnimator? {
-        return pushAnimator()
+    open func popAnimator(from fromVC: UIViewController, to toVC: UIViewController) -> JDAnimator? {
+        return pushAnimator(from: fromVC, to: toVC)
     }
     
     /// Override to use custom push transitions
-    open func pushAnimator() -> JDAnimator? {
-        NSLog("[JDTransition] JDNavigationDelegate.pushAnimator() is not overridden")
+    open func pushAnimator(from fromVC: UIViewController, to toVC: UIViewController) -> JDAnimator? {
+        NSLog("[JDTransition] JDNavigationDelegate.pushAnimator(from: _, to: _) is not overridden")
         return nil
     }
 }
