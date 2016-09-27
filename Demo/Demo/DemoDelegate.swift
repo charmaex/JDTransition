@@ -11,6 +11,24 @@ import JDTransition
 
 class DemoDelegate: JDNavigationDelegate {
     
+    private let animator = JDAnimator()
+    
+    override func pushAnimator() -> JDAnimator? {
+        animator.reset()
+        
+        animator.animationType(setTo: .slideFromBottom)
+        return animator
+    }
+    
+    override func popAnimator() -> JDAnimator? {
+        animator.reset()
+        
+        animator.animationType(setTo: .slideFromTop)
+        animator.transitionDuration(setTo: 2)
+        animator.transitionOptions(setTo: .curveEaseInOut)
+        
+        return animator
+    }
     
 }
 

@@ -27,6 +27,7 @@ public class JDAnimator: NSObject, UIViewControllerAnimatedTransitioning {
     /// All animations of JDTransition
     public enum AnimationType {
         case slideFromLeft, slideFromRight, slideFromBottom, slideFromTop
+        case scaleIn, scaleOut
     }
     
     private func animate(from fromVC: UIViewController, to toVC: UIViewController, completion: @escaping () -> ()) {
@@ -36,10 +37,19 @@ public class JDAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         case .slideFromRight: JDAnimationSlideFrom.right(fromVC: fromVC, toVC: toVC, duration: transitionTime, options: transitionOptions) { _ in completion() }
         case .slideFromBottom: JDAnimationSlideFrom.bottom(fromVC: fromVC, toVC: toVC, duration: transitionTime, options: transitionOptions) { _ in completion() }
         case .slideFromTop: JDAnimationSlideFrom.top(fromVC: fromVC, toVC: toVC, duration: transitionTime, options: transitionOptions) { _ in completion() }
+        case .scaleIn: JDAnimationScale.in(fromVC: fromVC, toVC: toVC, duration: transitionTime, options: transitionOptions) { _ in completion() }
+        case .scaleOut: JDAnimationScale.out(fromVC: fromVC, toVC: toVC, duration: transitionTime, options: transitionOptions) { _ in completion() }
         }
     }
     
     // MARK: - Setup
+    
+    /// Resets all values to initial/default values
+    public func reset() {
+        animation = .slideFromRight
+        transitionTime = 0.4
+        transitionOptions = nil
+    }
     
     /// Set the animation type.
     /// - parameter type: default is slideFromRight

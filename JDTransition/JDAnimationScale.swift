@@ -8,9 +8,9 @@
 
 import Foundation
 
-class JDAnimationScale {
+struct JDAnimationScale {
  
-    class func out(fromVC: UIViewController, toVC: UIViewController, duration: TimeInterval, options opt: UIViewAnimationOptions?, completion: @escaping (Bool) -> ()) {
+    static func out(fromVC: UIViewController, toVC: UIViewController, duration: TimeInterval, options opt: UIViewAnimationOptions?, completion: @escaping (Bool) -> ()) {
         
         toVC.view.frame = fromVC.view.frame
         
@@ -24,7 +24,7 @@ class JDAnimationScale {
         }
     }
 
-    class func `in`(fromVC: UIViewController, toVC: UIViewController, duration: TimeInterval, options opt: UIViewAnimationOptions?, completion: @escaping (Bool) -> ()) {
+    static func `in`(fromVC: UIViewController, toVC: UIViewController, duration: TimeInterval, options opt: UIViewAnimationOptions?, completion: @escaping (Bool) -> ()) {
         
         toVC.view.frame = fromVC.view.frame
         
