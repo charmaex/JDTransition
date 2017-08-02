@@ -11,8 +11,8 @@ import JDTransition
 
 class FirstVC: UIViewController {
 
-	@IBAction func pushVC(sender: UIButton) {
-		let VC = SecondViewController()
-		navigationController?.pushViewController(VC, animated: true)
-	}
+    @IBAction func pushVC(sender _: UIButton) {
+        let VC = SecondViewController()
+        navigationController?.pushViewController(VC, animated: true)
+    }
 }

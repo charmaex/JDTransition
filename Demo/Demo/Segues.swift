@@ -9,5 +9,5 @@
 import Foundation
 
 enum Segues: String {
-	case ScaleIn
+    case ScaleIn
 }

@@ -11,22 +11,22 @@ import JDTransition
 
 class DemoDelegate: JDNavigationDelegate {
 
-	private let animator = JDAnimator()
+    private let animator = JDAnimator()
 
-	override func pushAnimator(from fromVC: UIViewController, to toVC: UIViewController) -> JDAnimator? {
-		animator.reset()
+    override func pushAnimator(from _: UIViewController, to _: UIViewController) -> JDAnimator? {
+        animator.reset()
 
-		animator.animationType(setTo: .slideFromBottom)
-		return animator
-	}
+        animator.animationType(setTo: .slideFromBottom)
+        return animator
+    }
 
-	override func popAnimator(from fromVC: UIViewController, to toVC: UIViewController) -> JDAnimator? {
-		animator.reset()
+    override func popAnimator(from _: UIViewController, to _: UIViewController) -> JDAnimator? {
+        animator.reset()
 
-		animator.animationType(setTo: .slideFromTop)
-		animator.transitionDuration(setTo: 2)
-		animator.transitionOptions(setTo: .curveEaseInOut)
+        animator.animationType(setTo: .slideFromTop)
+        animator.transitionDuration(setTo: 2)
+        animator.transitionOptions(setTo: .curveEaseInOut)
 
-		return animator
-	}
+        return animator
+    }
 }
