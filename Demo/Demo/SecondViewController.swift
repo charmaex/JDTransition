@@ -10,7 +10,7 @@ import UIKit
 
 class SecondViewController: UIViewController {
 
-	@IBAction func dismiss(_ sender: UIButton) {
-		self.dismiss(animated: false, completion: nil)
-	}
+    @IBAction func dismiss(_: UIButton) {
+        dismiss(animated: false, completion: nil)
+    }
 }
